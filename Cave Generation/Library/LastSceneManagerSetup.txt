@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/CellularAtomata.unity
+- path: Assets/3. Meshes.unity
   isLoaded: 1
   isActive: 1

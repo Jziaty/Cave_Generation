@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MapGenerator : MonoBehaviour {
+public class MapGenerator1 : MonoBehaviour {
 
     public int width;
     public int height;
@@ -104,6 +104,7 @@ public class MapGenerator : MonoBehaviour {
 
     private void OnDrawGizmos()
     {
+        
         if (map != null)
         {
             for (int x = 0; x < width; x++)
