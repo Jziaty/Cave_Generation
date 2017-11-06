@@ -21,6 +21,7 @@ public class MapGenerator : MonoBehaviour {
         GenerateMap();
     }
 
+    // Generate map wanneer linker muis knop ingedrukt wordt.
     void Update()
     {
         if (Input.GetMouseButtonDown(0))
@@ -31,6 +32,7 @@ public class MapGenerator : MonoBehaviour {
 
     void GenerateMap()
     {
+        // Grid in een array zetten
         map = new int[width, height];
         RandomFillMap();
 
@@ -38,7 +40,7 @@ public class MapGenerator : MonoBehaviour {
         {
             SmoothMap();
         }
-
+        // De border bepalen en hoe groot die is.
         int borderSize = bordersize;
         int[,] borderedMap = new int[width + borderSize * 2, height + borderSize * 2];
 
@@ -60,6 +62,7 @@ public class MapGenerator : MonoBehaviour {
         meshGen.GenerateMesh(borderedMap, 1);
     }
 
+    // De seed bepaald hoe de map gefilled wordt. 
     void RandomFillMap()
     {
         if (useRandomSeed)
@@ -82,6 +85,7 @@ public class MapGenerator : MonoBehaviour {
         }
     }
 
+    // Zorgen dat de map gesmoothe wordt zodat er niet random walls neer gezet worden maar ze goed bij elkaar bliven
     void SmoothMap()
     {
         for (int x = 0; x < width; x++)
@@ -101,6 +105,7 @@ public class MapGenerator : MonoBehaviour {
         }
     }
 
+    // Check direct hier omheen om te kijken hoeveel walls er omheen staan
     int GetSurroundingWallCount(int gridX, int gridY)
     {
         int wallCount = 0;
@@ -122,7 +127,7 @@ public class MapGenerator : MonoBehaviour {
         }
         return wallCount;
     }
-
+    // Niet relevant meer
     private void OnDrawGizmos()
     {
         /*

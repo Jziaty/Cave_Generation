@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/1. CellularAtomata.unity
+- path: Assets/4. 3D Walls.unity
   isLoaded: 1
   isActive: 1
